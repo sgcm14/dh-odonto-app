@@ -26,7 +26,7 @@ h1{
 nav{
   display: flex;
   width: 80vw;
-  justify-content: flex-start;
+  justify-content: flex-end;
   padding: 1rem;
 }
 
@@ -86,12 +86,20 @@ form{
 
 .card-grid{
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
   gap: 1rem;
   width: 90vw;
   height: auto;
   flex-wrap: wrap;
   margin: 0 auto;
+}
+
+.card > img {
+  height: 180px;
+  width: auto;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 0.5rem;
 }
 
 table {
