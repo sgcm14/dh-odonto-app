@@ -52,7 +52,7 @@ Los siguientes aspectos son extras al requisito mínimo de aprobación que será
 
 **Validaciones**
 
-- Una validación para cada campor es suficiente, pueden ser "manuales" o con expreciones regulares. Lo importante es el correcto manejo de errores y submit.
+- Una validación para cada campo es suficiente, pueden ser "manuales" o con expresiones regulares. Lo importante es el correcto manejo de errores y submit.
 
 **Funcionalidad de destacados**
 

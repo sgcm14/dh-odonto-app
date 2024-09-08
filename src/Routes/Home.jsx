@@ -8,7 +8,6 @@ const Home = () => {
   const [dentists, setDentists] = useState([]);
   const params = useParams();
   const navigate = useNavigate();
-  const [theme, setTheme] = useState('light');
 
   const getDentists = async () =>{
     const response = await fetch(`https://jsonplaceholder.typicode.com/users`);

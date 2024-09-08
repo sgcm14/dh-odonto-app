@@ -1,17 +1,17 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
-.favButton{
+.favButton {
   background-color: rgba(136, 136, 136, 0.116);
   padding: 10px;
   border: none;
@@ -19,49 +19,75 @@ code {
   cursor: pointer;
 }
 
-h1{
+h1 {
   text-align: center;
 }
 
-nav{
-  display: flex;
-  width: 80vw;
-  justify-content: flex-end;
+nav {
   padding: 1rem;
 }
 
-a{
+nav button {
+  background-color: black;
+  border-radius: 8px;
+  height: 40px;
+  width: 40px;
+}
+.navContainer {
+  display: flex;
+  justify-content: space-between;
+  width: 71vw;
+  margin: auto;
+  align-items: center;
+  height: 40px;
+}
+
+.linksNavbar {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+a {
   color: #000;
   text-decoration: none;
-  margin: 5px;
   cursor: pointer;
 }
-a:hover{
+a:hover {
   color: rgb(136, 136, 136);
-} 
+}
 
 footer {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
+  align-items: center;
   text-align: center;
   padding: 2rem;
   position: relative;
   bottom: 0;
-  width: 90%;
   height: 40px;
   margin-top: 2rem;
+  width: 71vw;
+  margin: auto;
 }
 
-footer > img{
-  width: 200px;
+footer img {
+  height: 39px;
   margin: 0;
 }
-footer > p{
+
+.logo p {
   margin: 0;
   padding-top: 0.7rem;
 }
 
-form{
+.logo,
+.logos {
+  display: flex;
+  gap: 5px;
+}
+
+form {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -70,7 +96,7 @@ form{
   margin: 0 auto;
 }
 
-.card{
+.card {
   display: flex;
   justify-content: space-around;
   flex-direction: column;
@@ -80,18 +106,19 @@ form{
   border: 0.5px solid rgb(136, 136, 136);
 }
 
-.card:hover{
+.card:hover {
   border: 0.5px solid rgb(206, 217, 142);
 }
 
-.card-grid{
+.card-grid {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   gap: 1rem;
-  width: 90vw;
   height: auto;
   flex-wrap: wrap;
   margin: 0 auto;
+  width: 71vw;
+  margin: auto;
 }
 
 .card > img {
@@ -102,16 +129,21 @@ form{
   margin-bottom: 0.5rem;
 }
 
-table {
- border-collapse: collapse;
-    border-spacing: 0;
-    width: 100%;
-    display: table;
-    border: 1px solid #ccc;
-
+.container {
+  width: 71vw;
+  margin: auto;
 }
 
-td, th {
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+  display: table;
+  border: 1px solid #ccc;
+}
+
+td,
+th {
   border: 1px solid #dddddd;
   text-align: left;
   padding: 8px;
@@ -121,10 +153,19 @@ tr:nth-child(even) {
   background-color: #dddddd;
 }
 
-.dark{
+.dark {
   background-color: #12121296;
   color: white;
 }
-.dark > a {
+
+.dark nav {
+  background-color: #12121296;
+}
+
+.dark a {
   color: white;
+}
+
+.dark .favButton {
+  background-color: white;
 }
