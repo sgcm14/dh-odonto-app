@@ -6,7 +6,7 @@ import { ContextGlobal } from "../Components/utils/global.context.jsx";
 //Este componente debera ser estilado como "dark" o "light" dependiendo del theme del Context
 
 const Navbar = () => {
-  const { state, dispatch } = useContext(ContextGlobal);
+  const { state, toggleTheme } = useContext(ContextGlobal);
   return (
     <nav>
       <div className="navContainer">
@@ -23,7 +23,7 @@ const Navbar = () => {
           </Link>
           {/* Aqui deberan agregar los liks correspondientes a las rutas definidas */}
           {/* Deberan implementar ademas la logica para cambiar de Theme con el button */}
-          <button onClick={() => dispatch({ type: "TOGGLE_THEME" })}>
+          <button onClick={toggleTheme}>
             {state.theme === "light" ? "🌙" : "☀️"}
           </button>
         </div>
