@@ -1,32 +1,18 @@
-import React, { useState, useEffect } from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
+import { ContextGlobal } from "../Components/utils/global.context.jsx";
 
 const Card = ({ name, username, id }) => {
-  const [isFavorite, setIsFavorite] = useState(false);
-
-  // Revisamos si el dentista ya está en localStorage
-  useEffect(() => {
-    const storedFavorites = JSON.parse(localStorage.getItem("favorites")) || [];
-    const isFav = storedFavorites.some((dentist) => dentist.id === id);
-    setIsFavorite(isFav);
-  }, [id]);
+  const { state, addToFavorites, removeFromFavorites } = useContext(ContextGlobal);
+  const isFavorite = state.favorites.some((dentist) => dentist.id === id);
 
   const addFav = () => {
     // Aqui iria la logica para agregar la Card en el localStorage
-    let storedFavorites = JSON.parse(localStorage.getItem("favorites")) || [];
     if (isFavorite) {
-      // Si ya es favorito, lo removemos de favoritos
-      const updatedFavorites = storedFavorites.filter(
-        (dentist) => dentist.id !== id
-      );
-      localStorage.setItem("favorites", JSON.stringify(updatedFavorites));
-      setIsFavorite(false);
+      removeFromFavorites({ id });
       alert("El dentista fue removido de favoritos.");
     } else {
-      // Si no es favorito, lo agregamos
-      storedFavorites.push({ id, name, username });
-      localStorage.setItem("favorites", JSON.stringify(storedFavorites));
-      setIsFavorite(true);
+      addToFavorites({ id, name, username });
       alert("Dentista guardado en favoritos.");
     }
   };
