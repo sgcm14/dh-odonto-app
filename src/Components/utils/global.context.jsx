@@ -1,5 +1,5 @@
 import axios from "axios";
-import React, { createContext, useEffect, useReducer } from "react";
+import React, { createContext, useEffect, useReducer, useMemo} from "react";
 
 export const initialState = {
   theme: "light",
@@ -40,7 +40,7 @@ export const ContextProvider = ({ children }) => {
   //Aqui deberan implementar la logica propia del Context, utilizando el hook useMemo
   const [state, dispatch] = useReducer(globalReducer, initialState);
 
-   const addToFavorites = (data) => {
+  const addToFavorites = (data) => {
     dispatch({ type: "ADD_TO_FAVORITES", payload: data });
   };
 
@@ -69,8 +69,9 @@ export const ContextProvider = ({ children }) => {
     });
   };
 
+  const contextValue = useMemo( () => ({ state, toggleTheme, addToFavorites, removeFromFavorites, }), [state] );
   return (
-    <ContextGlobal.Provider value={{ state, toggleTheme, addToFavorites, removeFromFavorites }}>
+    <ContextGlobal.Provider value={contextValue}>
       {children}
     </ContextGlobal.Provider>
   );

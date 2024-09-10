@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
+import { routes } from "./utils/routes";
 import { ContextGlobal } from "../Components/utils/global.context.jsx";
 
 const Card = ({ name, username, id }) => {
@@ -25,7 +26,7 @@ const Card = ({ name, username, id }) => {
 
       {/* Ademas deberan integrar la logica para guardar cada Card en el localStorage */}
       <img src="/images/doctor.jpg" alt="" />
-      <Link to={`/dentist/${id}`}>
+      <Link to={routes.detail.replace(":id", id)}>
         <h3>{name}</h3>
       </Link>
       <p>{username}</p>

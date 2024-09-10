@@ -19,7 +19,9 @@ const Form = ({setSubmittedData}) => {
   }
 
   const validateName = (name)=>{
-    return name.trim().length>5 && name==name.trimStart() && !/\d/.test(name);
+    const trimmedName = name.trim().replace(/\s+/g, ' ');
+    const words = trimmedName.split(' ');
+    return trimmedName.length > 5 && words.length > 1 && !/\d/.test(trimmedName);
   }
 
   const validateEmail = (email)=>{
