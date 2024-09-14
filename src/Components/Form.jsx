@@ -2,8 +2,6 @@ import React,{ useState } from "react";
 
 
 const Form = ({setSubmittedData}) => {
-  //Aqui deberan implementar el form completo con sus validaciones
-  
   const [formData, setFormData] = useState({
     name: "",
     email: "",

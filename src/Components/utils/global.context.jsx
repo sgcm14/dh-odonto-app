@@ -37,7 +37,6 @@ const globalReducer = (state, action) => {
 };
 
 export const ContextProvider = ({ children }) => {
-  //Aqui deberan implementar la logica propia del Context, utilizando el hook useMemo
   const [state, dispatch] = useReducer(globalReducer, initialState);
 
   const addToFavorites = (data) => {

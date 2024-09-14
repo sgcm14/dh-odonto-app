@@ -7,6 +7,16 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+#root{
+  height: 100vh;
+}
+
+.App{
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
@@ -17,6 +27,10 @@ code {
   border: none;
   width: 100%;
   cursor: pointer;
+}
+
+button:hover, .dark button:hover{
+  background-color: #336aea;
 }
 
 h1 {
@@ -57,21 +71,19 @@ a:hover {
   color: rgb(136, 136, 136);
 }
 
-footer {
+.footer-container{
   display: flex;
   justify-content: space-between;
   align-items: center;
   text-align: center;
   padding: 2rem;
-  position: relative;
-  bottom: 0;
   height: 40px;
   margin-top: 2rem;
   width: 71vw;
   margin: auto;
 }
 
-footer img {
+.footer-container img {
   height: 39px;
   margin: 0;
 }
@@ -134,6 +146,10 @@ form {
   margin: auto;
 }
 
+.container-main, main{
+  flex-grow: 1;
+}
+
 table {
   border-collapse: collapse;
   border-spacing: 0;
@@ -154,11 +170,14 @@ tr:nth-child(even) {
 }
 
 .dark {
-  background-color: #12121296;
   color: white;
 }
 
 .dark nav {
+  background-color: #000000;
+}
+
+.dark main, .dark footer, .dark .container-main {
   background-color: #12121296;
 }
 
@@ -168,4 +187,8 @@ tr:nth-child(even) {
 
 .dark .favButton {
   background-color: white;
+}
+
+.dark .card h3:hover{
+color: #12121296;
 }
